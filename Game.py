@@ -42,18 +42,18 @@ def upgrades_decompile(upgrades):
 def upgrade(upgrade_wanted, cash, number_of_upgrades):
     try:
         if int(upgrade_wanted) not in upgrades.keys():
-            if (cash - ((int(upgrade_wanted) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2)) > 0:
-                if cash >= (int(upgrade_wanted) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2:
+            if (cash - ((round((int(upgrade_wanted)**1.6)) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2) > 0:
+                if cash >= (round((int(upgrade_wanted)**1.6)) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2:
                     upgrades[int(upgrade_wanted)] = int(number_of_upgrades)
-                    cash -= (int(upgrade_wanted) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2
+                    cash -= (round((int(upgrade_wanted)**1.6)) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2
                     return cash
             else:
-                print(f"To little cash you needed {(int(upgrade_wanted) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2}$ and you have {cash}$")
+                print(f"To little cash you needed {((round((int(upgrade_wanted)**1.6)) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2}$ and you have {cash}$")
                 return cash
         else:
-            if (cash - ((int(upgrade_wanted) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2)) > 0:
+            if (cash - ((round((int(upgrade_wanted)**1.6)) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2) > 0:
                 upgrades[int(upgrade_wanted)] += int(number_of_upgrades)
-                cash -= (int(upgrade_wanted) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2
+                cash -= (round((int(upgrade_wanted)**1.6)) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2
                 return cash
             else:
                 print(f"To little cash you needed {(int(upgrade_wanted) * int(number_of_upgrades)) * int(upgrade_wanted) ** 2}$ and you have {cash}$")
