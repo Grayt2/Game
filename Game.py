@@ -64,7 +64,7 @@ def upgrade(upgrade_wanted, cash, number_of_upgrades):
 
 def gain_cash(cash, all_upgrade):
     for i in all_upgrade.keys():
-        cash += ((1.6**int(i)) * int(all_upgrade[int(i)])) / 5
+        cash += ((1.6**int(i)) * int(all_upgrade[int(i)])) / 10
     return (cash)
 
 def offline_cash_gain(upgrades, time_since_last_played):
